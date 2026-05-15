@@ -1,6 +1,7 @@
 <?php
 
-function xd(){
+function encrypt() : void
+{
         require 'env.php';//with putenv()
 
         // Store a string into the variable which
@@ -41,6 +42,12 @@ function xd(){
         // Display the decrypted string
         echo "Decrypted String: " . $decryption;
         
+}
+
+function validateGuid(string $guid) : bool
+{
+        $guid_regex = "/^(?:\\{{0,1}(?:[0-9a-fA-F]){8}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){4}-(?:[0-9a-fA-F]){12}\\}{0,1})$/"; 
+        return preg_match($guid_regex, $guid);
 }
 
 
