@@ -1,4 +1,5 @@
 <?php
-require 'env.php';//with putenv()
-echo getenv("NAME")
+include 'process.php';
+
+xd();
 ?>
